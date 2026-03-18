@@ -51,11 +51,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     private void addItems(MapGroup group) {
         for (MapItem item : group.getItems()) {
-            if (item.hasMetaValue("atakRoleType"))
+            // Only add items with 2525D symbology (type starts with "a-f")
+            String type = item.getType();
+            if (type != null && type.startsWith("a-f")) {
                 _items.add(item);
+            }
         }
-        for (MapGroup grp : group.getChildGroups())
+        for (MapGroup grp : group.getChildGroups()) {
             addItems(grp);
+        }
     }
 
     public void setListMode(boolean listMode) {
