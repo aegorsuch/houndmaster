@@ -51,9 +51,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     private void addItems(MapGroup group) {
         for (MapItem item : group.getItems()) {
-            // Only add items with 2525D symbology (type starts with "a-")
+            // Only add dropped points with 2525D symbology (type starts with "a-") and NOT contacts
             String type = item.getType();
-            if (type != null && type.startsWith("a-")) {
+            boolean is2525D = type != null && type.startsWith("a-");
+            boolean isContact = item.hasMetaValue("atakRoleType");
+            if (is2525D && !isContact) {
                 _items.add(item);
             }
         }
