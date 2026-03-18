@@ -54,5 +54,8 @@ public class ContactsRecyclerViewDropDown extends DropDownReceiver implements Ti
     public View getView() {
         return _view;
     }
-}
 
+    public void show() {
+        showDropDown(_view, THREE_EIGHTHS_WIDTH, FULL_HEIGHT, FULL_WIDTH, THIRD_HEIGHT);
+    }
+}
