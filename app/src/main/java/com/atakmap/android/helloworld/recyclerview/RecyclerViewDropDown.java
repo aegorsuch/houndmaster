@@ -63,8 +63,15 @@ public class RecyclerViewDropDown extends DropDownReceiver implements
         _adapter.setOnItemSelectedListener(new RecyclerViewAdapter.OnItemSelectedListener() {
             @Override
             public void onItemSelected(MapItem item) {
-                // Show contacts drop-down
-                ContactsRecyclerViewDropDown contactsDropDown = new ContactsRecyclerViewDropDown(_mapView, _plugin);
+                // Show contacts drop-down, passing the selected Map Item
+                ContactsRecyclerViewDropDown contactsDropDown = new ContactsRecyclerViewDropDown(_mapView, _plugin, item);
+                contactsDropDown.setOnContactSelectedListener(new ContactsRecyclerViewDropDown.OnContactSelectedListener() {
+                    @Override
+                    public void onContactSelected(MapItem mapItem, MapItem contact) {
+                        // TODO: Implement logic to send mapItem to contact
+                        sendMapItemToContact(mapItem, contact);
+                    }
+                });
                 contactsDropDown.show();
                 // Optionally, dispose this drop-down if needed
                 dispose();
@@ -139,5 +146,18 @@ public class RecyclerViewDropDown extends DropDownReceiver implements
     public void show() {
         showDropDown(_view, THREE_EIGHTHS_WIDTH, FULL_HEIGHT, FULL_WIDTH,
                 THIRD_HEIGHT);
+    }
+
+    // Add this method to handle sending the Map Item to the Contact
+    private void sendMapItemToContact(MapItem mapItem, MapItem contact) {
+        // Serialize the MapItem to a CoT event
+        com.atakmap.coremap.cot.event.CotEvent cotEvent = com.atakmap.android.importexport.CotEventFactory.createCotEvent(mapItem);
+        if (cotEvent == null) {
+            android.widget.Toast.makeText(_plugin, "Failed to create CoT event", android.widget.Toast.LENGTH_SHORT).show();
+            return;
+        }
+        // Broadcast the CoT event to all
+        com.atakmap.android.cot.CotMapComponent.getExternalDispatcher().dispatchToBroadcast(cotEvent);
+        android.widget.Toast.makeText(_plugin, "Sent " + mapItem.getTitle(), android.widget.Toast.LENGTH_SHORT).show();
     }
 }

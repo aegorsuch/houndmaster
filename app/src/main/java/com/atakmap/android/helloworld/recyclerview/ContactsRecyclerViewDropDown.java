@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import com.atakmap.android.dropdown.DropDownReceiver;
 import com.atakmap.android.helloworld.plugin.R;
+import com.atakmap.android.maps.MapItem;
 import com.atakmap.android.maps.MapView;
 import com.atakmap.android.util.time.TimeListener;
 import com.atakmap.android.util.time.TimeViewUpdater;
@@ -22,11 +23,14 @@ public class ContactsRecyclerViewDropDown extends DropDownReceiver implements Ti
     private final View _view;
     private final RecyclerView _rView;
     private final RecyclerViewAdapter _adapter;
+    private final MapItem selectedMapItem;
+    private OnContactSelectedListener onContactSelectedListener;
 
-    public ContactsRecyclerViewDropDown(MapView mapView, Context plugin) {
+    public ContactsRecyclerViewDropDown(MapView mapView, Context plugin, MapItem selectedMapItem) {
         super(mapView);
         _mapView = mapView;
         _plugin = plugin;
+        this.selectedMapItem = selectedMapItem;
         _view = LayoutInflater.from(_plugin).inflate(R.layout.recycler_view, mapView, false);
         _rView = _view.findViewById(R.id.rView);
         _adapter = new RecyclerViewAdapter(_mapView, _plugin, true); // true = contacts only
@@ -37,6 +41,15 @@ public class ContactsRecyclerViewDropDown extends DropDownReceiver implements Ti
         if (label instanceof android.widget.TextView) {
             ((android.widget.TextView) label).setText("Contacts");
         }
+        _adapter.setOnItemSelectedListener(new RecyclerViewAdapter.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(MapItem contact) {
+                if (onContactSelectedListener != null) {
+                    onContactSelectedListener.onContactSelected(selectedMapItem, contact);
+                }
+                dispose();
+            }
+        });
         _timeUpdater = new TimeViewUpdater(_mapView, 1000);
         _timeUpdater.register(this);
     }
@@ -64,4 +77,11 @@ public class ContactsRecyclerViewDropDown extends DropDownReceiver implements Ti
         // No broadcast handling needed for this drop-down
     }
 
+    public void setOnContactSelectedListener(OnContactSelectedListener listener) {
+        this.onContactSelectedListener = listener;
+    }
+
+    public interface OnContactSelectedListener {
+        void onContactSelected(MapItem mapItem, MapItem contact);
+    }
 }
