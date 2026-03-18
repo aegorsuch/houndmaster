@@ -1,0 +1,11 @@
+com.atakmap.android.helloworld.plugin.app-debug-0 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build-types\debug\res
+com.atakmap.android.helloworld.plugin.app-civ-1 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build\generated\res\pngs\civ\debug
+com.atakmap.android.helloworld.plugin.app-civ-2 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build\generated\res\resValues\civ\debug
+com.atakmap.android.helloworld.plugin.app-updated_navigation_xml-3 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build\generated\updated_navigation_xml\civDebug
+com.atakmap.android.helloworld.plugin.app-packageCivDebugResources-4 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build\intermediates\incremental\civDebug\packageCivDebugResources\merged.dir
+com.atakmap.android.helloworld.plugin.app-packageCivDebugResources-5 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build\intermediates\incremental\civDebug\packageCivDebugResources\stripped.dir
+com.atakmap.android.helloworld.plugin.app-civDebug-6 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\build\intermediates\merged_res\civDebug\mergeCivDebugResources
+com.atakmap.android.helloworld.plugin.app-civ-7 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\src\civ\res
+com.atakmap.android.helloworld.plugin.app-civDebug-8 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\src\civDebug\res
+com.atakmap.android.helloworld.plugin.app-main-9 C:\Projects\ATAK-Dev\ATAK-CIV-5.6.0-SDK\plugins\houndmaster\app\src\main\res
+com.atakmap.android.helloworld.plugin.app-recyclerview-1.1.0-10 C:\Users\alex\.gradle\caches\8.14.3\transforms\7c1ffa4db153c09ce6f9de83b0972660\transformed\recyclerview-1.1.0\res

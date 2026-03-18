@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.atakmap.android.helloworld.plugin",
+  "variantName": "civDebug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1773591963,
+      "versionName": "1.0 (751fa4e3) - [5.6.0]",
+      "outputFile": "ATAK-Plugin-houndmaster-1.0-751fa4e3-5.6.0-civ-debug.apk"
+    }
+  ],
+  "elementType": "File",
+  "minSdkVersionForDexing": 24
+}
