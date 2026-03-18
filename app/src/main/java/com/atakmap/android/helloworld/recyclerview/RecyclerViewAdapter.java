@@ -51,9 +51,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter {
 
     private void addItems(MapGroup group) {
         for (MapItem item : group.getItems()) {
-            // Only add items with 2525D symbology (type starts with "a-f")
+            // Only add items with 2525D symbology (type starts with "a-")
             String type = item.getType();
-            if (type != null && type.startsWith("a-f")) {
+            if (type != null && type.startsWith("a-")) {
                 _items.add(item);
             }
         }
