@@ -36,6 +36,7 @@ import android.view.View.OnLongClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -77,6 +78,7 @@ import com.atakmap.android.helloworld.layers.LayerDownloadExample;
 import com.atakmap.android.helloworld.menu.MenuFactory;
 import com.atakmap.android.helloworld.navstack.NavigationStackDropDown;
 import com.atakmap.android.helloworld.plugin.R;
+import com.atakmap.android.helloworld.plugin.BloodhoundDashboardDropDown;
 import com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown;
 import com.atakmap.android.helloworld.samplelayer.ExampleLayer;
 import com.atakmap.android.helloworld.samplelayer.ExampleMultiLayer;
@@ -231,6 +233,7 @@ public class HelloWorldDropDownReceiver extends DropDownReceiver implements
     public static final String LAYER_DELETE = "com.atakmap.android.helloworld.LAYER_DELETE";
     public static final String LAYER_VISIBILITY = "com.atakmap.android.helloworld.LAYER_VISIBILITY";
     private final View helloView;
+    private final BloodhoundDashboardDropDown dashboardDropDown;
 
     private final Context pluginContext;
     private final Contact helloContact;
@@ -453,75 +456,71 @@ public class HelloWorldDropDownReceiver extends DropDownReceiver implements
     /**************************** CONSTRUCTOR *****************************/
 
         public HelloWorldDropDownReceiver(final MapView mapView, final Context context, HelloWorldMapOverlay overlay) {
-            super(mapView);
-            this.pluginContext = context;
-            this.mapOverlay = overlay;
-                    this.menuFactory = new MenuFactory(pluginContext);
-            final Activity parentActivity = (Activity) mapView.getContext();
-            registerOnActivityResultListener();
+        super(mapView);
+        this.pluginContext = context;
+        this.mapOverlay = overlay;
+        this.menuFactory = new MenuFactory(pluginContext);
+        final Activity parentActivity = (Activity) mapView.getContext();
+        registerOnActivityResultListener();
 
-            _joystickView = new JoystickListener();
+        _joystickView = new JoystickListener();
 
-            csr = new CotServiceRemote();
-            csr.setOutputsChangedListener(_outputsChangedListener);
+        csr = new CotServiceRemote();
+        csr.setOutputsChangedListener(_outputsChangedListener);
+        csr.connect(cl);
 
-            csr.connect(cl);
+        imis = new InspectionMapItemSelectionTool();
 
-            imis = new InspectionMapItemSelectionTool();
+        csl = new CotStreamListener(mapView.getContext(), TAG, null) {
+            @Override
+            public void onCotOutputRemoved(Bundle bundle) {
+                Log.d(TAG, "stream outputremoved");
+            }
+            @Override
+            protected void enabled(TAKServer port, boolean enabled) {
+                Log.d(TAG, "stream enabled");
+            }
+            @Override
+            protected void connected(TAKServer port, boolean connected) {
+                Log.d(TAG, "stream connected");
+            }
+            @Override
+            public void onCotOutputUpdated(Bundle descBundle) {
+                Log.d(TAG, "stream added/updated");
+            }
+        };
+        printNetworks();
 
-            csl = new CotStreamListener(mapView.getContext(), TAG, null) {
-                @Override
-                public void onCotOutputRemoved(Bundle bundle) {
-                    Log.d(TAG, "stream outputremoved");
-                }
+        AtakBroadcast.DocumentedIntentFilter dif = new AtakBroadcast.DocumentedIntentFilter(
+                "com.atakmap.android.helloworld.FAKE_PHONE_CALL");
+        AtakBroadcast.getInstance().registerReceiver(fakePhoneCallReceiver, dif);
 
-                @Override
-                protected void enabled(TAKServer port,
-                        boolean enabled) {
-                    Log.d(TAG, "stream enabled");
-                }
+        // If you are using a custom layout you need to make use of the PluginLayoutInflator to clear
+        // out the layout cache so that the plugin can be properly unloaded and reloaded.
+        helloView = PluginLayoutInflater.inflate(pluginContext, R.layout.hello_world_layout, null);
 
-                @Override
-                protected void connected(TAKServer port,
-                        boolean connected) {
-                    Log.d(TAG, "stream connected");
-                }
+        // Initialize Bloodhound dashboard and embed it in the dashboardContainer
+        dashboardDropDown = new com.atakmap.android.helloworld.plugin.BloodhoundDashboardDropDown(
+            mapView, pluginContext, new com.atakmap.android.helloworld.plugin.BloodhoundOrderManager());
+        FrameLayout dashboardContainer = helloView.findViewById(R.id.dashboardContainer);
+        dashboardContainer.removeAllViews();
+        dashboardContainer.addView(dashboardDropDown.getView());
 
-                @Override
-                public void onCotOutputUpdated(Bundle descBundle) {
-                    Log.d(TAG, "stream added/updated");
-                }
-
-            };
-
-            printNetworks();
-
-            AtakBroadcast.DocumentedIntentFilter dif = new AtakBroadcast.DocumentedIntentFilter(
-                    "com.atakmap.android.helloworld.FAKE_PHONE_CALL");
-            AtakBroadcast.getInstance().registerReceiver(fakePhoneCallReceiver,
-                    dif);
-
-            // If you are using a custom layout you need to make use of the PluginLayoutInflator to clear
-            // out the layout cache so that the plugin can be properly unloaded and reloaded.
-            helloView = PluginLayoutInflater.inflate(pluginContext,
-                    R.layout.hello_world_layout, null);
-            // Add new Bloodhound order button logic (after helloView is initialized)
-            final Button addBloodhoundOrderBtn = helloView.findViewById(R.id.addBloodhoundOrderBtn);
-            addBloodhoundOrderBtn.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    // Show RecyclerView with Map Items
-                    com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown mapItemsDropDown =
-                        new com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown(mapView, pluginContext);
-                    mapItemsDropDown.show();
-                }
-            });
-            // ...existing code...
+        // Add new Bloodhound order button logic (after helloView is initialized)
+        final Button addBloodhoundOrderBtn = helloView.findViewById(R.id.addBloodhoundOrderBtn);
+        addBloodhoundOrderBtn.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Optionally, you can clear or update the dashboard here if needed
+                com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown mapItemsDropDown =
+                    new com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown(mapView, context);
+                mapItemsDropDown.show();
+            }
+        });
+        // ...existing code...
 
         this.helloContact = addPluginContact(pluginContext.getString(
                 R.string.hello_world));
-
-        //Find buttons by id and implement code for long click
         View.OnLongClickListener longClickListener = new OnLongClickListener() {
 
             @Override
@@ -3659,5 +3658,4 @@ public class HelloWorldDropDownReceiver extends DropDownReceiver implements
     }
 
 }
-
 
