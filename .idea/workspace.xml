@@ -10,151 +10,18 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view.xml">
+        <config>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04148dbe-102d-41d7-a1a1-a3502f74014f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../hotpursuit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/.vite/deps/_metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/.vite/deps/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/proguard-gradle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/proguard-gradle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/androidTest/java/com/atakmap/android/helloworld/ExampleTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/androidTest/java/com/atakmap/android/helloworld/GeocoordTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/androidTest/java/com/atakmap/android/helloworld/HelloWorldRobot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/androidTest/java/com/atakmap/android/helloworld/MapTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/aidl/com/atakmap/android/helloworld/aidl/ILogger.aidl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/aidl/com/atakmap/android/helloworld/aidl/SimpleService.aidl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/actions/layer_delete.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/actions/layer_toggle_visibility.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/certs2/DODSWCA-66.crt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/details.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menu2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menu_submenu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menus/atsk/atsk_az_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menus/atsk/atsk_lrf_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menus/atsk/atsk_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/menus/layer_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/remove.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/remove.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/removeblue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/removeyellow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/assets/specialdetail.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/CameraActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/GLSpecialMarker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldContactHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldDropDownReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldMapComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldMapOverlay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldPreferenceFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldSubPreferenceFragment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloWorldWidget.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/HelloworldLocationProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/JoystickListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/OffscreenMapCapture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/PluginIconPallet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/PluginPermissionActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/RouteEventListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/ShaderInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/SpecialDetail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/SpecialDetailHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/SpeechToTextActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/TabViewDropDown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/WebViewDropDownReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/heatmap/GLSimpleHeatMapLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/heatmap/SimpleHeatMapLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/image/MapScreenshotExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/importer/HelloImportResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/layers/LayerDownloadExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/menu/CancelAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/menu/MenuFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/navstack/NavigationStackDropDown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/navstack/NavigationStackDropdownChild.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/notification/NotificationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/plugin/HelloWorldLifecycle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/plugin/HelloWorldTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/recyclerview/RecyclerView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/recyclerview/RecyclerViewAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/recyclerview/RecyclerViewDropDown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/routes/RouteExportMarshal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/samplelayer/ExampleLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/samplelayer/ExampleMultiLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/samplelayer/GLExampleLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/samplelayer/GLExampleMultiLayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/sender/HelloWorldContactSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/service/ExampleAidlService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechBloodHound.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechBrightness.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechDetailOpener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechItemRemover.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechLinker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechNavigator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechNineLine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechPointDropper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/speechtotext/SpeechToActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/tools/LRFPointTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/utils/PluginRecyclerView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/helloworld/view/ViewOverlayExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/hotpursuit/HotPursuitMapComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/hotpursuit/plugin/HotPursuitLifecycle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/atakmap/android/hotpursuit/plugin/HotPursuitTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/java/com/javacodegeeks/android/contentprovidertest/BirthProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-mdpi/arrowright.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-mdpi/node_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-mdpi/radio_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-xhdpi/ic_route.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-xhdpi/rv_grid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-xhdpi/rv_horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable-xhdpi/rv_vertical.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/abc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/dot_selected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/dot_selector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/dot_unselected.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/ic_launcher_badge.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/drawable/svg_example.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/blank_linearlayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/fragment_foo.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/hello_world_layout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/marker_callsign_row.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/marker_callsign_tile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/navigation_stack.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/navigation_stack_dropdown_child.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/overlay_footer.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/overlay_header.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/radio_item_generic.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/recycler_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/specialdetail.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/speech_to_text.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/tab_swipe_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/layout/view_overlay_example.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values-ar/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values-ko/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/color.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/dimen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/dimen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/xml/preferences.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/main/res/xml/subpreferences.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/app/src/test/java/com/atakmap/android/test/ExampleGeoPointTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/docs/user_manual/usermanual.typ" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/docs/user_manual/usermanual.typ" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../plugintemplate/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../plugintemplate/gradlew" afterDir="false" />
-    </list>
+    <list default="true" id="04148dbe-102d-41d7-a1a1-a3502f74014f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,22 +44,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "aegorsuch"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aegorsuch&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/aegorsuch/Houndmaster.git",
-    "accountId": "88cdb1c5-9b45-417b-8180-a4b795202132"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/aegorsuch/Houndmaster.git&quot;,
+    &quot;accountId&quot;: &quot;88cdb1c5-9b45-417b-8180-a4b795202132&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="3B7m7sOfkzqVYdD8nqLhm5cSG6O" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
@@ -210,7 +77,8 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projects/ATAK-Dev/ATAK-CIV-5.6.0-SDK/plugins/houndmaster"
+    "last_opened_file_path": "C:/Projects/ATAK-Dev/ATAK-CIV-5.6.0-SDK/plugins/houndmaster",
+    "recommended.upgrade.do.not.ask.for.project": "true"
   }
 }]]></component>
   <component name="RunManager">

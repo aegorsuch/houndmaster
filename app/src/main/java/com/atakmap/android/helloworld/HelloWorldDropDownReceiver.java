@@ -510,7 +510,10 @@ public class HelloWorldDropDownReceiver extends DropDownReceiver implements
             addBloodhoundOrderBtn.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Do nothing
+                    // Show RecyclerView with Map Items
+                    com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown mapItemsDropDown =
+                        new com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown(mapView, pluginContext);
+                    mapItemsDropDown.show();
                 }
             });
             // ...existing code...
@@ -3656,3 +3659,5 @@ public class HelloWorldDropDownReceiver extends DropDownReceiver implements
     }
 
 }
+
+

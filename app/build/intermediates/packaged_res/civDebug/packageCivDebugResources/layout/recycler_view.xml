@@ -12,11 +12,12 @@
         android:gravity="center_vertical"
         android:padding="6dp">
         <TextView
+            android:id="@+id/recyclerViewLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="4dp"
-            android:text="List of TAK Users"
+            android:text="Map Items"
             android:textSize="18sp"
             android:textColor="#FFF"/>
         <ImageButton

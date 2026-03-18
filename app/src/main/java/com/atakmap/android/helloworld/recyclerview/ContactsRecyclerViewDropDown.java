@@ -1,5 +1,7 @@
 package com.atakmap.android.helloworld.recyclerview;
 
+import android.content.Intent;
+
 import android.content.Context;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -50,7 +52,6 @@ public class ContactsRecyclerViewDropDown extends DropDownReceiver implements Ti
             _adapter.notifyDataSetChanged();
     }
 
-    @Override
     public View getView() {
         return _view;
     }
@@ -58,4 +59,9 @@ public class ContactsRecyclerViewDropDown extends DropDownReceiver implements Ti
     public void show() {
         showDropDown(_view, THREE_EIGHTHS_WIDTH, FULL_HEIGHT, FULL_WIDTH, THIRD_HEIGHT);
     }
+
+    public void onReceive(Context context, Intent intent) {
+        // No broadcast handling needed for this drop-down
+    }
+
 }
