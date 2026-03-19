@@ -24,7 +24,6 @@ public class HoundmasterDropDownReceiver extends DropDownReceiver {
 
     @Override
     protected void disposeImpl() {
-        // No cleanup needed
+        // No special cleanup required
     }
 }
-
