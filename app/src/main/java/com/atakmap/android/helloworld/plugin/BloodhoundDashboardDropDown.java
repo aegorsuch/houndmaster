@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.atakmap.android.dropdown.DropDownReceiver;
@@ -34,11 +33,7 @@ public class BloodhoundDashboardDropDown extends DropDownReceiver {
             // Show the add order flow (show map items for selection)
             com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown dropDown = new com.atakmap.android.helloworld.recyclerview.RecyclerViewDropDown(_mapView, plugin);
             dropDown.show();
-            dispose();
         });
-        // Optionally set the title (not strictly needed, but for future dynamic title changes)
-        TextView title = _view.findViewById(R.id.bloodhoundDashboardTitle);
-        if (title != null) title.setText("Houndmaster");
     }
 
     public void show() {
@@ -58,5 +53,10 @@ public class BloodhoundDashboardDropDown extends DropDownReceiver {
     @Override
     public void onReceive(Context context, android.content.Intent intent) {
         // No broadcast handling needed for this drop-down
+    }
+
+    public static void showDashboard(MapView mapView, Context plugin) {
+        BloodhoundDashboardDropDown dash = new BloodhoundDashboardDropDown(mapView, plugin, BloodhoundOrderManager.getInstance());
+        dash.show();
     }
 }

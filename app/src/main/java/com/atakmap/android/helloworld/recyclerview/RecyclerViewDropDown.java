@@ -74,9 +74,11 @@ public class RecyclerViewDropDown extends DropDownReceiver implements
                     public void onContactSelected(MapItem mapItem, MapItem contact) {
                         // Send mapItem to contact and add order
                         sendMapItemToContact(mapItem, contact);
-                        // Show the dashboard after adding the order
-                        BloodhoundDashboardDropDown dash = new BloodhoundDashboardDropDown(_mapView, _plugin, BloodhoundOrderManager.getInstance());
-                        dash.show();
+                        // Show the Bloodhound dashboard after adding the order
+                        com.atakmap.android.helloworld.plugin.BloodhoundDashboardDropDown.showDashboard(_mapView, _plugin);
+                        // Show the main hello overlay after adding the order
+                        android.content.Intent showHelloIntent = new android.content.Intent("com.atakmap.android.helloworld.SHOW_HELLO_WORLD");
+                        _plugin.sendBroadcast(showHelloIntent);
                     }
                 });
                 contactsDropDown.show();
