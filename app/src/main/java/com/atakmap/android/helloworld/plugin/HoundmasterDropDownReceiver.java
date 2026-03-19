@@ -21,5 +21,10 @@ public class HoundmasterDropDownReceiver extends DropDownReceiver {
         BloodhoundDashboardDropDown dash = new BloodhoundDashboardDropDown(mapView, pluginContext, BloodhoundOrderManager.getInstance());
         dash.show();
     }
+
+    @Override
+    protected void disposeImpl() {
+        // No cleanup needed
+    }
 }
 
