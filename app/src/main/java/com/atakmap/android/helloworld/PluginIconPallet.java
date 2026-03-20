@@ -7,22 +7,23 @@ import com.atakmap.android.user.icon.*;
 import com.atakmap.android.maps.Marker;
 import com.atakmap.android.maps.MapItem;
 
-import android.view.View;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-import android.content.Context;
+ import android.view.View;
+ import android.os.Bundle;
+ import android.view.LayoutInflater;
+ import android.view.ViewGroup;
+ import android.content.Context;
+ import com.atakmap.android.maps.MapView;
 
 import com.atakmap.coremap.maps.coords.GeoPointMetaData;
 
 public class PluginIconPallet implements IconPallet {
 
-    private final Fragment fragment;
     static Context pContext = null;
+    static MapView mapView = null;
 
     public PluginIconPallet(Context pContext) {
         PluginIconPallet.pContext = pContext;
-        this.fragment = new FooFragment();
+        // MapView will be set later when available
     }
 
     @Override
@@ -37,7 +38,7 @@ public class PluginIconPallet implements IconPallet {
 
     @Override
     public Fragment getFragment() {
-        return fragment;
+        return new DashboardLauncherFragment();
     }
 
     @Override
@@ -71,25 +72,14 @@ public class PluginIconPallet implements IconPallet {
         // fooFragment should impl refresh;
     }
 
-    static public class FooFragment extends Fragment {
-        // The onCreateView method is called when Fragment should create its View object hierarchy,
-        // either dynamically or via XML layout inflation. 
+    static public class DashboardLauncherFragment extends Fragment {
         @Override
-        public View onCreateView(LayoutInflater donotuse, ViewGroup parent,
-                Bundle savedInstanceState) {
-            // Defines the xml file for the fragment
-            // Note the inflater is using the plugin context.
-            LayoutInflater inflater = LayoutInflater.from(pContext);
-
-            return inflater.inflate(R.layout.fragment_foo, null);
-        }
-
-        // This event is triggered soon after onCreateView().
-        // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
-        @Override
-        public void onViewCreated(View view, Bundle savedInstanceState) {
-            // Setup any handles to view objects here
-            // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            if (mapView != null && pContext != null) {
+                com.atakmap.android.helloworld.plugin.BloodhoundDashboardDropDown.showDashboard(mapView, pContext);
+            }
+            // Return a minimal FrameLayout to suppress default hints
+            return new android.widget.FrameLayout(requireContext());
         }
     }
 }

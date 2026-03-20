@@ -1,4 +1,3 @@
-
 package com.atakmap.android.helloworld;
 
 import android.content.BroadcastReceiver;
@@ -37,6 +36,8 @@ import com.atakmap.android.helloworld.aidl.ILogger;
 import com.atakmap.android.helloworld.aidl.SimpleService;
 import com.atakmap.android.helloworld.importer.HelloImportResolver;
 import com.atakmap.android.helloworld.plugin.R;
+import com.atakmap.android.helloworld.plugin.HoundmasterDropDownReceiver;
+import com.atakmap.android.helloworld.plugin.HoundmasterTool;
 import com.atakmap.android.helloworld.routes.RouteExportMarshal;
 import com.atakmap.android.helloworld.sender.HelloWorldContactSender;
 import com.atakmap.android.helloworld.service.ExampleAidlService;
@@ -116,8 +117,6 @@ public class HelloWorldMapComponent extends DropDownMapComponent implements Shar
     public static final String TAG = "HelloWorldMapComponent";
 
     private Context pluginContext;
-    private HelloWorldDropDownReceiver dropDown;
-    private WebViewDropDownReceiver wvdropDown;
     private HelloWorldMapOverlay mapOverlay;
     private View genericRadio;
     private SpecialDetailHandler sdh;
@@ -251,34 +250,28 @@ public class HelloWorldMapComponent extends DropDownMapComponent implements Shar
         // trigger for this visual component is an intent.   
         // see the plugin.HelloWorldTool where that intent
         // is triggered.
-        this.dropDown = new HelloWorldDropDownReceiver(view, context,
-                this.mapOverlay);
+        HoundmasterDropDownReceiver houndmasterDropDown = new HoundmasterDropDownReceiver(view, context);
+        DocumentedIntentFilter ddFilter = new DocumentedIntentFilter();
+        ddFilter.addAction(HoundmasterTool.SHOW_HOUNDMASTER, "Show the Houndmaster dashboard drop-down");
+        registerDropDownReceiver(houndmasterDropDown, ddFilter);
 
         // We use documented intent filters within the system
         // in order to automatically document all of the 
         // intents and their associated purposes.
 
         Log.d(TAG, "registering the show hello world filter");
-        DocumentedIntentFilter ddFilter = new DocumentedIntentFilter();
-        ddFilter.addAction(HelloWorldDropDownReceiver.SHOW_HELLO_WORLD,
+        DocumentedIntentFilter ddFilter2 = new DocumentedIntentFilter();
+        ddFilter2.addAction(HelloWorldDropDownReceiver.SHOW_HELLO_WORLD,
                 "Show the Hello World drop-down");
-        ddFilter.addAction(HelloWorldDropDownReceiver.CHAT_HELLO_WORLD,
+        ddFilter2.addAction(HelloWorldDropDownReceiver.CHAT_HELLO_WORLD,
                 "Chat message sent to the Hello World contact");
-        ddFilter.addAction(HelloWorldDropDownReceiver.SEND_HELLO_WORLD,
+        ddFilter2.addAction(HelloWorldDropDownReceiver.SEND_HELLO_WORLD,
                 "Sending CoT to the Hello World contact");
-        ddFilter.addAction(HelloWorldDropDownReceiver.LAYER_DELETE,
+        ddFilter2.addAction(HelloWorldDropDownReceiver.LAYER_DELETE,
                 "Delete example layer");
-        ddFilter.addAction(HelloWorldDropDownReceiver.LAYER_VISIBILITY,
+        ddFilter2.addAction(HelloWorldDropDownReceiver.LAYER_VISIBILITY,
                 "Toggle visibility of example layer");
-        this.registerDropDownReceiver(this.dropDown, ddFilter);
         Log.d(TAG, "registered the show hello world filter");
-
-        this.wvdropDown = new WebViewDropDownReceiver(view, context);
-        Log.d(TAG, "registering the webview filter");
-        DocumentedIntentFilter wvFilter = new DocumentedIntentFilter();
-        wvFilter.addAction(WebViewDropDownReceiver.SHOW_WEBVIEW,
-                "web view");
-        this.registerDropDownReceiver(this.wvdropDown, wvFilter);
 
         // in this case we also show how one can register
         // additional information to the uid detail handle when 
@@ -704,7 +697,6 @@ public class HelloWorldMapComponent extends DropDownMapComponent implements Shar
         Log.d(TAG, "calling on destroy");
         ContactLocationView.unregister(extendedselfinfo);
         GLMapItemFactory.unregisterSpi(GLSpecialMarker.SPI);
-        this.dropDown.dispose();
         ToolsPreferenceFragment.unregister("helloWorldPreference");
         RadioMapComponent.getInstance().unregisterControl("generic-radio-uid");
         view.getMapOverlayManager().removeOverlay(mapOverlay);
